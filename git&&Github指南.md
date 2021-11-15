@@ -102,8 +102,11 @@ git就是这样一颗”后悔药“，其中留档的commit历史赋予我们�
 ---------------------------------------
 
 ##### 参考资料
-[Roger Dudler. git简明指南](https://www.runoob.com/manual/git-guide/)
+[Roger Dudler. git简明指南](https://www.runoob.com/manual/git-guide/)     
+  
 [Fengyu. Github新手够用指南](https://www.bilibili.com/video/BV1e541137Tc?from=search&seid=11261212184045141491&spm_id_from=333.337.0.0)
+  
 [Fengyu. 40分钟学会git](https://www.bilibili.com/video/BV1db4y1d79C?spm_id_from=333.999.0.0)
+  
 [菜鸟教程](https://www.runoob.com/w3cnote/git-guide.html)
 
