@@ -1,0 +1,85 @@
+### markdown
+
+##### 1. 编辑媒介
+
+* Typora编辑器（所见即所得）
+* GitHub
+* vscode（.md后缀文件）
+
+##### 2. 常用语法
+
+> 注意: [首部]语法符号和内容间要以[空格]隔开才能生效
+
+* **标题：**\###### 分级标题（共六级）
+
+* **段落**：段落的换行是使用两个以上空格加上回车
+
+* **代码**：
+
+  1. 行内：引用`左上角``包围`
+
+  2. 多行：分别使用三个反引号（```）包裹多行代码, 选择语言实现代码高亮
+
+     ```javascript
+     function showPic(whichpic) {
+     
+       var source = whichpic.getAttribute('href');
+     
+       var placeholder = document.getElementById('placeholder');
+     
+       placeholder.setAttribute('src', source);
+     
+       } 
+
+  
+
+* **列表**：1. 句首\* 字段 2. 数字. 字段
+
+* **引用**：句首> 引用内容  
+
+* **链接**：1. [链接名称]+(链接地址)  [链接](https://www.runoob.com/markdown/md-link.html)  
+
+  ​			2. <链接地址>
+
+* **图片**：1. 直接复制粘贴  
+
+  ​			2.![alt 属性文本](图片地址)
+
+  ![img](https://www.runoob.com/wp-content/uploads/2019/03/A042DF30-C232-46F3-8436-7D6C35351BBD.jpg)
+
+  ```html
+  <img src="http://static.runoob.com/images/runoob-logo.png" width="50%">(用html语法可以调整图片尺寸)
+  ```
+
+* **转义**：\*\* 正常显示星号 \*\*
+
+* **表格**：Markdown 制作表格使用 **|** 来分隔不同的单元格，使用 **-** 来分隔表头和其他行
+
+  <img src="C:\Users\htmc\AppData\Roaming\Typora\typora-user-images\image-20211115132624949.png" width="100%">
+
+  | 表头 | 表头 |
+  | ---- | ---- |
+  |      |      |
+
+* **文本格式**：**加粗**  *斜体*
+
+
+
+*****
+
+##### 3. 参考资料
+
+[MarkDown菜鸟教程](https://www.runoob.com/markdown/md-tutorial.html)
+
+[MarkDown语法手册（较全）](https://blog.csdn.net/witnessai1/article/details/52551362)
+
+[Github版Markdown语法](https://github.com/gnipbao/markdown-handbook)
+
+
+
+
+
+
+
+
+
