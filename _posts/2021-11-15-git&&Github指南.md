@@ -3,7 +3,7 @@ layout: post
 title:  "git&&Github指南"
 date: 2021-11-15
 author: htmc
-header-img: /img/post_bg1_blue.png
+header-img: img/post_bg1_blue.png
 catalog: true
 tags: 
   -git
