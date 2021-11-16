@@ -1,6 +1,6 @@
 # Site settings
-title: My Own Space
-SEOTitle: 何短短的个人博客 | htmc's own space   	 #显示在浏览器上搜索的时候显示的标题
+title: "My Own Space"
+SEOTitle: "何短短的个人博客 | htmc's own space"   	 #显示在浏览器上搜索的时候显示的标题
 header-img: img/aboutme.jpg 显示在首页的背景图片
 email: hexiaotong_alvin@163.com	
 description: "technical articles and life methodology"  			 #网站介绍
@@ -12,7 +12,7 @@ github_repo: "https://github.com/elvinhtmc/elvinhtmc.github.io.git" # you code r
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Thinking will not overcome fear but action will."
-sidebar-avatar: /img/profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # SNS settings
 RSS: false
@@ -56,13 +56,13 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: elvinhtmc
+disqus_username: elvinhtmc
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 7d48d3a6f5df92f4d33b                        #生成的clientID
-  clientSecret: 71fa7d3107497fbb45690938a891826b3f7d1773    #生成的clientSecret
+  clientSecret: 340133a5fab5083e8b206c1832248b79258e9d7b   #生成的clientSecret
   repo: elvinhtmc.github.io  #仓库名称
   owner: elvinhtmc  #github用户名
   admin: elvinhtmc
@@ -96,7 +96,7 @@ service-worker: true
 
 
 # Friends
-#friends: [
+# friends: [
     {
         title: "WY",
         href: "http://zhengwuyang.com"
