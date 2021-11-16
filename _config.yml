@@ -61,7 +61,7 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID:7d48d3a6f5df92f4d33b                        #生成的clientID
+  clientID: 7d48d3a6f5df92f4d33b                        #生成的clientID
   clientSecret: 71fa7d3107497fbb45690938a891826b3f7d1773    #生成的clientSecret
   repo: https://github.com/elvinhtmc/elvinhtmc.github.io.git
   owner: elvinhtmc
