@@ -33,20 +33,20 @@
 
   
 
-* **列表**：1. 句首\* 字段 2. 数字. 字段
+* **列表**：1. 句首\* 字段  | 2. 数字. 字段
 
 * **引用**：句首> 引用内容  
 
-* **链接**：1. [链接名称]+(链接地址)  [链接](https://www.runoob.com/markdown/md-link.html)  
-
-  ​			2. <链接地址>
+* **链接**：1. [链接名称]+(链接地址)  [链接](https://www.runoob.com/markdown/md-link.html)   | 2. <链接地址>
 
 * **图片**：1. 直接复制粘贴  
 
   ​			2.![alt 属性文本](图片地址)
 
-  ![img](https://www.runoob.com/wp-content/uploads/2019/03/A042DF30-C232-46F3-8436-7D6C35351BBD.jpg)
+  > 图片地址可以是相对/绝对路径或其在外链文件夹中的位置
 
+  ![img](https://www.runoob.com/wp-content/uploads/2019/03/A042DF30-C232-46F3-8436-7D6C35351BBD.jpg)
+  
   ```html
   <img src="http://static.runoob.com/images/runoob-logo.png" width="50%">(用html语法可以调整图片尺寸)
   ```
@@ -55,7 +55,7 @@
 
 * **表格**：Markdown 制作表格使用 **|** 来分隔不同的单元格，使用 **-** 来分隔表头和其他行
 
-  <img src="C:\Users\htmc\AppData\Roaming\Typora\typora-user-images\image-20211115132624949.png" width="100%">
+  <img src="/img/mk_table.png" width="100%">
 
   | 表头 | 表头 |
   | ---- | ---- |

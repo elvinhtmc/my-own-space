@@ -22,7 +22,7 @@ git就是这样一颗”后悔药“，其中留档的commit历史赋予我们�
 
 
 
-![image-20211115113202004](C:\Users\htmc\AppData\Roaming\Typora\typora-user-images\image-20211115113202004.png)
+![image-20211115113202004](/img/git_flow.png)
 
 > **git终端命令（右键git Bash或vscode内下拉选择git终端）**
 
@@ -48,6 +48,11 @@ git就是这样一颗”后悔药“，其中留档的commit历史赋予我们�
 
 1. 将本地git仓库与github连接：`git remote add origin <server>(具体代码内容github会在新建仓库时告诉你)`
 2. 将本地改动提交到远程仓库：`git push origin master(master是你想推送的任何分支)`
+
+> 主分支直接`git push`即可
+>
+> 网络问题导致push总是timed out失败， 实在无法推送就将完成态文件手动上传
+
 3. 获取github远程仓库中的改动 `git pull`
 
 > 执行push和pull操作时会检查领先性，有可能先pull，在本地解决代码冲突，再push，达成两边的一致
