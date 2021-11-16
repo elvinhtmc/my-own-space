@@ -1,6 +1,6 @@
 # Site settings
-title: "My Own Space"
-SEOTitle: "何短短的个人博客 | htmc's own space"   	 #显示在浏览器上搜索的时候显示的标题
+title: My Own Space
+SEOTitle: 何短短的个人博客 | htmc's own space  	 #显示在浏览器上搜索的时候显示的标题
 header-img: img/aboutme.jpg 显示在首页的背景图片
 email: hexiaotong_alvin@163.com	
 description: "technical articles and life methodology"  			 #网站介绍
