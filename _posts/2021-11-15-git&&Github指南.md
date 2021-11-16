@@ -1,3 +1,14 @@
+---
+layout: post
+title:  "git&&Github指南"
+date: 2021-11-15
+author: htmc
+header-img:
+catalog: true
+tags: 
+  -git
+  github
+---
 [TOC]
 
 ### 什么是git和Github？
