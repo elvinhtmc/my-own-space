@@ -14,7 +14,7 @@ tags:
 
 git是版本控制工具，Github是基于git的远程代码仓库。开发者可以将本地代码托管到公共平台github上，来与其他开发者线上远程协作。
 
-git和Github的基本功能体现了三个核心概念： commit（提交）|repository（仓库）|branch（分支）。我们可以通过repository本地或远程托管代码，通过commit将确定的更改提交来完成迭代，通过branch让协作者在其他分支上进行开发，完成后将各个branch合并到主分支上（主分支是成品）。
+git和Github的基本功能体现了三个核心概念： commit（提交），repository（仓库），branch（分支）。我们可以通过repository本地或远程托管代码，通过commit将确定的更改提交来完成迭代，通过branch让协作者在其他分支上进行开发，完成后将各个branch合并到主分支上（主分支是成品）。
 
 
 
