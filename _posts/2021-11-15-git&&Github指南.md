@@ -9,7 +9,6 @@ tags:
   -git
   github
 ---
-[TOC]
 
 ### 什么是git和Github？
 
