@@ -12,14 +12,7 @@ github_repo: "https://github.com/elvinhtmc/elvinhtmc.github.io.git" # you code r
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Thinking will not overcome fear but action will."
-<<<<<<< HEAD
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-=======
 sidebar-avatar: /img/profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
->>>>>>> 85e92767ecc09a8d732fb621d377220e6c22c17e
-
-
 
 # SNS settings
 RSS: false
