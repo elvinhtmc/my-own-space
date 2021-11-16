@@ -1,7 +1,7 @@
 # Site settings
 title: My Own Space
-SEOTitle: 我的个人博客 | htmc's own space   	 #显示在浏览器上搜索的时候显示的标题
-#header-img: img/aboutme.jpg 显示在首页的背景图片
+SEOTitle: 何短短的个人博客 | htmc's own space   	 #显示在浏览器上搜索的时候显示的标题
+header-img: img/aboutme.jpg 显示在首页的背景图片
 email: hexiaotong_alvin@163.com	
 description: "technical articles and life methodology"  			 #网站介绍
 keyword: "elvin, htmc, htmc Blog, htmc,hexiaotong, html, javascript, css, lifestyle" #关键词
@@ -16,13 +16,13 @@ sidebar-avatar: /img/profile.jpg      # use absolute URL, seeing it's used in bo
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-#zhihu_username:     qiubaiying
+# weibo_username:     elvinhtmc
+#zhihu_username:     elvinhtmc
 github_username:    elvinhtmc
-#facebook_username:  baiying.qiu.7
-#jianshu_username:   e71990ada2fd
+#facebook_username:  elvinhtmc
+#jianshu_username:   elvinhtmc
 github_username:    elvinhtmc
-#twitter_username:   qiubaiying
+#twitter_username:   elvinhtmc
 
 
 
@@ -63,8 +63,8 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 7d48d3a6f5df92f4d33b                        #生成的clientID
   clientSecret: 71fa7d3107497fbb45690938a891826b3f7d1773    #生成的clientSecret
-  repo: https://github.com/elvinhtmc/elvinhtmc.github.io.git
-  owner: elvinhtmc
+  repo: elvinhtmc.github.io  #仓库名称
+  owner: elvinhtmc  #github用户名
   admin: elvinhtmc
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
@@ -76,8 +76,8 @@ gitalk:
 ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
