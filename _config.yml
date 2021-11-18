@@ -1,4 +1,5 @@
 # Site settings
+theme: jekyll-theme-cayman #没有使用主题，防止gitpages无法正常建立
 title: My Own Space
 SEOTitle: 何短短的个人博客 | htmc's own space   	 #显示在浏览器上搜索的时候显示的标题
 header-img: img/aboutme.jpg #显示在首页的背景图片
