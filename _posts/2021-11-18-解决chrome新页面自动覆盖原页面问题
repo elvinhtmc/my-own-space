@@ -1,0 +1,18 @@
+---
+layout: post
+title: 解决chrome新页面自动覆盖原页面问题
+date: 2021-11-18
+author:何短短
+header-img: img/post_bg1_blue.png
+catalog: true
+tags: 
+  -chrome
+---
+#### 使用快捷键
+点击连接时Ctrl+Shift+鼠标左键，即可跳转到新打开的页面
+#### 更改search settings
+* 点击搜索结果页的右上角的settings-searchsettings
+![img](img/chrome_searchsettings]
+* 在search results-Where results open勾选"Open each selected result in a new browser window"
+![img](img/chrome_whereopen]
+* 保存更改，之后页面会从新窗口打开
