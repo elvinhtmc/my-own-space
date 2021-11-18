@@ -14,8 +14,8 @@ tags:
 * Ctrl+Shift+鼠标左键点击
 #### 更改search settings（搜索结果页改变）
 * 点击搜索结果页的右上角的settings-searchsettings
-![img](img/chrome_searchsettings]
+![img](img/chrome_searchsettings.jpg]
 * 在search results-Where results open勾选"Open each selected result in a new browser window"
-![img](img/chrome_whereopen]
+![img](img/chrome_whereopen.jpg]
 * 保存更改，之后页面会从新窗口打开
 
