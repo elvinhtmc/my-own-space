@@ -1,10 +1,10 @@
-theme: jekyll-theme-cayman
+# Site settings
 title: My Own Space
-SEOTitle: 我的个人博客 | htmc's own space   	 #显示在浏览器上搜索的时候显示的标题
-header-img: /img/aboutme.jpg 显示在首页的背景图片
+SEOTitle: 何短短的个人博客 | htmc's own space   	 #显示在浏览器上搜索的时候显示的标题
+header-img: img/aboutme.jpg #显示在首页的背景图片
 email: hexiaotong_alvin@163.com	
 description: "technical articles and life methodology"  			 #网站介绍
-keyword: "elvin, htmc, htmc Blog, htmc,hexiaotong, html, javascript, css, lifestyle" #关键词
+keyword: "何短短, htmc, htmc Blog, htmc, html, javascript, css, lifestyle" #关键词
 url: "https://elvinhtmc.github.io"          # 这个就是填写你的博客地址
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/elvinhtmc/elvinhtmc.github.io.git" # you code repository
@@ -53,7 +53,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: elvinhtmc
 
 # Gitalk
 gitalk:
@@ -71,8 +71,8 @@ gitalk:
 #ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-#ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'G-X3D33FDG76'            # Format: UA-xxxxxx-xx
+ga_domain: auto;               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
