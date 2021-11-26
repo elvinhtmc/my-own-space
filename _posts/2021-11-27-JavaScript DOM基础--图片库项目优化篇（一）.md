@@ -1,4 +1,13 @@
-JavaScript DOM基础--图片库项目优化篇（一）
+---
+layout: post
+title: "JavaScript DOM基础--图片库项目优化篇（一）"
+date: 2021-11-27
+author: "何短短"
+header-img: img/post_bg1_blue.png
+catalog: true
+tags: 
+  -JavaScript
+---
 
 #### 项目简介
 
@@ -8,7 +17,7 @@ JavaScript DOM基础--图片库项目优化篇（一）
 
 
 
-#### 初始代码
+#### 原始代码
 
 #### 项目优化
 
