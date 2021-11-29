@@ -6,8 +6,7 @@ author: "何短短"
 header-img: img/post_bg1_blue.png
 catalog: true
 tags: 
-  -git
-  -github
+  -git&github
 ---
 
 ### 什么是git和Github？
