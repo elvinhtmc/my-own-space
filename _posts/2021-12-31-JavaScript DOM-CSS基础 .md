@@ -78,10 +78,11 @@ JavaScript DOM-CSS基础
    }
    ``````
 
-3. **响应事件**
+3. **为对应特定事件的元素赋予样式**
 
    ``````js
-   //定义变量与遍历，赋予符合条件的元素事件
+   //响应事件
+   //定义变量与遍历，赋予符合条件的元素事件，类似var:hover{}
    function highlightRows() {
    for(i初始判定更新){
    	var[i].onmouseover = function(){
@@ -91,7 +92,7 @@ JavaScript DOM-CSS基础
    }
    ``````
 
-4. **className属性**
+4. **通过className属性赋予元素样式**
 
    与其用DOM直接设置样式，让行为层处理表示层的事，不如用DOM设置/修改元素的样式，然后在样式表调整样式属性。
 
@@ -99,7 +100,22 @@ JavaScript DOM-CSS基础
 
    在给元素追加新class时，可以按照以下步骤操作：
 
-   
+   ``````js
+   function addClasses(){
+       var elem = [获取一个变量];
+       addClass(elem,'valuename');//注意这里的引号，值要以引号形式代入
+   }
+   function addClass(element,value) {
+     if (!element.className) { //检查element.className是否是null
+       element.className = value;//是则直接赋予className
+     } else {
+       newClassName = element.className;//不是则和在html书写class一样
+       newClassName+= " "; //class="c1[空格]c2"
+       newClassName+= value;
+       element.className = newClassName;
+     }
+   }
+   ``````
 
 #### bug
 
@@ -138,9 +154,51 @@ JavaScript DOM-CSS基础
 
    * ![img](/img/post-domcss.jpg)
 
-4. ##### 函数始终不起作用（不小心在开头打了断点）
+4. ##### ！函数始终不起作用
 
-   断点是调试器设置源程序在执行过程中自动进入中断模式的一个标记。当程序运行到断点时，程序中断执行（断点所在的行还没有执行），进入调试状态。通过设置断点可以查找程序运行时的错误，是调试程序常用的手段。
+   * 不小心在开头打了断点
+
+     断点是调试器设置源程序在执行过程中自动进入中断模式的一个标记。当程序运行到断点时，程序中断执行（断点所在的行还没有执行），进入调试状态。通过设置断点可以查找程序运行时的错误，是调试程序常用的手段。
+
+   * 函数失效问题
+
+     ``````js
+     addLoadEvents(setnextpara); 
+     addLoadEvents(stripeTables);
+     addLoadEvents(addClass);
+     //内部引用，三个函数只有最后一个能生效；外部引用，只有stripeTables生效
+     //debug 2h 未明原因
+     ``````
+
+     **内部引用，只有最后一个函数生效**，原因是`window. onload= function`连续使用，后覆盖前。正确用法为：
+
+     ``````js
+        function addLoadEvents(func) {
+                 var oldonload = window.onload;
+                 if (typeof oldonload != 'function') {
+                     window.onload = func;
+                 } else {//此处需要另设函数function()
+                     window.onload = function () {
+                         oldonload();
+                         func();
+                     }
+                 }
+             }
+     /*else{
+         window.onload = function1;
+         window.onload = function2;
+     }(×)*/
+     ``````
+
+     外部引用，stripeTables不报错，`stripeTables()`和`addClass()`报错
+
+     > Uncaught ReferenceError: stripeTables / addClass is not defined
+
+     在修改了`addClass()`和之前的`addLoadEvents(func) `后，运行恢复正常，说明可能是函数冲突/错误导致报错，但原因不完全确定。
+
+     **! 添加多个<script>时，一个js文件的错误可能导致连锁报错，因此一次性运行所有js文件会导致纠错困难。最好一个一个运行（添加断点或转为注释），这样便于纠察js文件内部的错误，而暂时无需考虑文件间的冲突。**
+
+     
 
 5. ##### **其他细节**
 
@@ -150,4 +208,12 @@ JavaScript DOM-CSS基础
 
    * 奇偶判定用%余数，不能`i==odd`
 
+   * js变量声明问题 ` newClassName = element.className;`
+   
+     > Var i=100 显示申明，i=100 隐式申明。
+     >
+     > 在函数中使用var关键字进行显式申明的变量是做为局部变量，而没有用var关键字，使用直接赋值方式声明的是全局变量。
+     >
+     > 当我们使用访问一个没有声明的变量时，JS会报错。而当我们给一个没有声明的变量赋值时，JS不会报错，相反它会认为我们是要隐式申明一个全局变量，这一点一定要注意。
+     
      

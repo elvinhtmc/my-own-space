@@ -1,6 +1,6 @@
 JavaScript DOM基础--图片库项目优化篇
 
-#### 项目简介
+#### 项目简介（imggalleryProject）
 
 该图片库项目”imagegallery来自《JavaScript DOM编程艺术》，通过它来巩固DOM基础，学习网页制作规范。
 
