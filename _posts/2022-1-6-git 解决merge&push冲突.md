@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "git&&Github指南"
-date: 2021-11-15
+title:  "git解决merge&push冲突"
+date: 2022-1-6
 author: "何短短"
 header-img: img/post_bg1_blue.png
 catalog: true
@@ -9,19 +9,28 @@ tags:
   -git&github
 ---
 
-### 什么是git和Github？
+### git 分支与合并相关命令
 
-git是版本控制工具，Github是基于git的远程代码仓库。开发者可以将本地代码托管到公共平台github上，来与其他开发者线上远程协作。
+``````terminal
+git branch                # 显示所有本地分支
+git checkout <branch/tag> # 切换到指定分支或标签*
+git branch <new-branch>   # 创建新分支*
+git branch -d <branch>    # 删除本地分支*
+git checkout dev          # 合并特定的commit到dev分支上
+``````
 
-git和Github的基本功能体现了三个核心概念： commit（提交），repository（仓库），branch（分支）。我们可以通过repository本地或远程托管代码，通过commit将确定的更改提交来完成迭代，通过branch让协作者在其他分支上进行开发，完成后将各个branch合并到主分支上（主分支是成品）。
+``````terminal
+git merge <branch>        # 合并指定分支到当前分支*
+git merge --abort         # 取消当前合并，重建合并前状态*
+git merge dev -Xtheirs    # 以合并dev分支到当前分支，有冲突则以dev分支为准
+git rebase <branch>       # 衍合指定分支到当前分支
+``````
 
+### git merge解决合并冲突
 
+git 代码创建分支让不同的人和不同的开发过程隔离，最后通过merge汇聚到主分支。主分支是一个完成态，是一切的起点和终点，一切分支最好从主分支产生。
 
-### 为什么要使用git来管理代码？
-
-在日常开发中，我们会经常对代码进行修改，但有时修改后的程序会出现bug，或是还不如之前的之前的版本。这个时候，我们就希望能有一颗”后悔药“，能让代码返回更改前的状态。
-
-git就是这样一颗”后悔药“，其中留档的commit历史赋予我们随时穿越回过去版本的”超能力“。
+merge汇总时，不同分支的代码可能存在冲突，需要调整为唯一版本，下文介绍解决merge冲突的方法。
 
 
 
