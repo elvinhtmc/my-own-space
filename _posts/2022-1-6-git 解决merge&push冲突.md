@@ -11,6 +11,8 @@ tags:
 
 ### git 分支与合并相关命令
 
+> 下面的<>在实际命令中不写，该符号表示分支/标签。实际写为git checkout main
+
 ``````terminal
 git branch                # 显示所有本地分支
 git checkout <branch/tag> # 切换到指定分支或标签*
@@ -32,99 +34,47 @@ git 代码创建分支让不同的人和不同的开发过程隔离，最后通�
 
 merge汇总时，不同分支的代码可能存在冲突，需要调整为唯一版本，下文介绍解决merge冲突的方法。
 
+在vscode中打开存在冲突的文件，你会看到不同颜色标注的代码，绿色的current change和蓝色的incoming change。点击上方小字“accept incoming change”即为接受新更改的代码，点击“accept current change”即为采用当前代码。
 
+如果觉得两者均有可取之处，需要点击小字“accept both changes”，保留两种代码，手动修改。
 
-### 如何用git管理代码--git的工作流
+![image-20220107171804725](../img/post-gitmerge-smalltext.png)
 
-- #### 使用git管理本地代码
+如果明确有一方的代码都正确，可以在“source control”侧边栏“merge changes”右键目标文件，选择“accept all current"或"accept all incoming",选择只采用一方的代码。
 
+<img src ="../img/post-gitmerge-sidecolumn.jpg" width="300px" align="left" >
 
+如果是别人的代码，实在不知道如何解决冲突，`可以git merge--abort`放弃合并，去找能处理该冲突的人，硬改可能会出大错。
 
-![image-20211115113202004](/img/git_flow.png)
+> **补充：计算机词汇stage：暂存区（Stage 或 Index），stage changes将更改提交到暂存区，相当于命令git add**
 
-> **git终端命令（右键git Bash或vscode内下拉选择git终端）**
+解决冲突后，重新提交文件。
 
-1. 创建新仓库：打开新文件夹，右键`git Here`，打开git终端，执行`git init`建立仓库（该操作会生成一个隐藏的.git文件）
-2. 克隆本地仓库：`git clone path`
-3. **将文件添加到暂存区**：`git add`<file> (某文件)|`git add -A` (全部文件)
-4. **提交改动到本地仓库**：`git commit -m "代码提交信息（如first）"`
-5. 以当前分支为基础新建分支：`git checkout -b branchname`
-6. 切换到某分支：`git checkout branchname`
-7. 删掉特定分支：`git branch -D branchname`
-8. 合并分支：`git merge branchname`
-9. 查看提交历史 `git log --stat`
-10. 将工作区中的文件回滚到保存期前的版本 `git checkout filename`
-11. 回滚文件到commit前的版本 `git reset HEAD^n`
+### 补充：git文件的四种状态
 
-> **vscode图形界面操作**
->
-> 下载GitLens插件，可以直接看到版本历史和分支，比命令终端方便
+![img](../img/post-gitmerge-fourstatus.png)
 
+**git库所在的文件夹中的文件大致有4种状态：**
 
+- Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过`git add` 状态变为`Staged`
+- Unmodify: 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为`Modified`. 如果使用`git rm`移出版本库, 则成为`Untracked`文件
+- Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过`git add`可进入暂存`staged`状态, 使用`git checkout`则丢弃修改过, 返回到`unmodify`状态, 这个`git checkout`即从库中取出文件, 覆盖当前修改
+- Staged: 暂存状态. 执行`git commit`则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为`Unmodify`状态. 执行`git reset HEAD filename`取消暂存, 文件状态为`Modified`
 
-- #### 实现git和github之间的代码往来
+### git push解决合并冲突
 
-1. 将本地git仓库与github连接：`git remote add origin <server>(具体代码内容github会在新建仓库时告诉你)`
-2. 将本地改动提交到远程仓库：`git push origin master(master是你想推送的任何分支)`
+`git pull`相当于 `git fetch` 跟着一个 `git merge`。拉取可以看做是把远程分支集成到本地当前分支，类似分支之间的集成，因此拉取时遇到冲突，与merge时的处理是一样的。
 
-> `git push`总失败，要使用完整的`git push origin master`
-
-3. 获取github远程仓库中的改动 `git pull`
-
-> 执行push和pull操作时会检查领先性，有可能先pull，在本地解决代码冲突，再push，达成两边的一致
-
-
-
-------------------------
-
-### github与开源项目
-
-> 开源项目的代码完全公开，对我们而言，可以通过阅读他人的源码学习，也可以在他人代码的基础上进行二次开发，既能减缓学习曲线，也可以避免重复性代码劳动。
-
-* #### 如何寻找开源项目
-
-1. [github trending](https://github.com/trending)(可以筛选编程语言)
-
-2. [掘金](https://juejin.cn/)
-
-3. 相关的开源项目推荐博客
-
-* #### git搜索的特殊技巧（前后缀）
-
-1. awesome.技术名（找与技术相关的百科全书）
-2. xxx sample（找例子）
-3. xxx starter/boilplate（找空项目框架）
-4. xxx tutorial（找教程）
-
-* #### 开源项目中的文件
-
-1. README.md（项目简介和使用方法）
-2. license （使用许可）
-
-> MIT等机构的项目可以在保留版权信息的情况下随意使用，但有些项目不是，阅读license有助于规避后续的纠纷。
-
-3. issue（提问与讨论，接近于项目论坛）
-4. main，branch，commit（项目的主干、分支与更新）
-
-* #### 下载开源项目
-
-1. 打开用来保存项目的文件夹，右键`git Here`，打开git终端并执行`git clone path（path是从github code-clone复制的http地址）`
-
-2. 也可以在项目页面右上角`Star`收藏或`Fork`到自己的仓库
-
-> 为什么不直接下载ZIP？
->
-> 下载为git才能看到开发者的过往操作，可以从中窥见程序迭代的全过程，更有助于学习。
->
-> ZIP只有文件，没有记录，不过也可以通过git init创建新仓库，将它完全变成自己的项目。
+当本地文件落后于云端，先`git pull`拉取，在本地处理冲突（没有则直接push)，再将修改后的文件`git push`推送，达成本地和云端的一致。
 
 
 
 ---------------------------------------
 
 ##### 参考资料
-[Roger Dudler. git简明指南](https://www.runoob.com/manual/git-guide/)     
-[Fengyu. Github新手够用指南](https://www.bilibili.com/video/BV1e541137Tc?from=search&seid=11261212184045141491&spm_id_from=333.337.0.0)     
-[Fengyu. 40分钟学会git](https://www.bilibili.com/video/BV1db4y1d79C?spm_id_from=333.999.0.0)       
-[菜鸟教程](https://www.runoob.com/w3cnote/git-guide.html)
+[Fengyu. 40分钟学会git](https://www.bilibili.com/video/BV1db4y1d79C?spm_id_from=333.999.0.0)      
+
+ [git文件四种状态](https://www.cnblogs.com/thirteen-yang/p/13878118.html)
+
+[廖雪峰git教程](https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344) （！实用强推）
 

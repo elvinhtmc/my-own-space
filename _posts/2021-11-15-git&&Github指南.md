@@ -29,8 +29,6 @@ git就是这样一颗”后悔药“，其中留档的commit历史赋予我们�
 
 - #### 使用git管理本地代码
 
-
-
 ![image-20211115113202004](/img/git_flow.png)
 
 > **git终端命令（右键git Bash或vscode内下拉选择git终端）**
