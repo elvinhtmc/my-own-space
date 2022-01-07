@@ -3,7 +3,7 @@ layout: post
 title: "JavaScript DOM基础--图片库项目优化篇（一）"
 date: 2021-11-27
 author: "何短短"
-header-img: img/post-digital-minimalism-bg.jpg
+header-img: img/post-bg2-js.jpg
 catalog: true
 tags: 
   -JavaScript
