@@ -194,7 +194,7 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
 * **文本节点与元素节点之间的关系**
 
-  ​	![img](/img/post-imagegallery-dom.png)
+  ​	<img src="/img/post-imagegallery-dom.png" width="500px">
 
   文本节点和属性节点总被包含在元素节点内，是元素节点的子节点，可以通过`childNodes[n]`查找与调用。在这个练习中，p元素本身的nodeValue为空值，其子节点（文本节点）的值才对应文本内容,`description.childnodes[0].nodeValue=text`。
 
