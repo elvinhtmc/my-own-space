@@ -1,6 +1,13 @@
-<<<<<<< HEAD
-JavaScript DOM基础--图片库项目优化篇
-
+---
+layout: post
+title: "JavaScript DOM基础--图片库项目优化篇（一）"
+date: 2021-11-27
+author: "何短短"
+header-img: img/post-digital-minimalism-bg.jpg
+catalog: true
+tags: 
+  -JavaScript
+---
 #### 项目简介（imggalleryProject）
 
 该图片库项目”imagegallery来自《JavaScript DOM编程艺术》，通过它来巩固DOM基础，学习网页制作规范。
@@ -12,7 +19,6 @@ JavaScript DOM基础--图片库项目优化篇
 * 规范: 1. 分离CSS与样式 2. 考虑浏览器兼容 3. 考虑性能
 
 #### 完整JS代码
-
 ``````javascript
 //事件函数
 function showPic(whichpic) {
@@ -65,18 +71,6 @@ function addLoadEvent(func) {
 addLoadEvent(prepareGallery);
     //创建执行函数的队列
 ``````
-=======
----
-layout: post
-title: "JavaScript DOM基础--图片库项目优化篇（一）"
-date: 2021-11-27
-author: "何短短"
-header-img: img/post_bg1_blue.png
-catalog: true
-tags: 
-  -JavaScript
----
->>>>>>> 83eb4a884c73a52a0ce2d7466366a7302413dbb5
 
 #### 项目优化
 
@@ -88,11 +82,9 @@ tags:
 
 ​	表示层：由CSS负责完成，描述页面内容的呈现效果。
 
-<<<<<<< HEAD
 ​	行为层：由JS和DOM主宰，负责内容该如何响应事件。
-=======
+
 ##### 原始代码
->>>>>>> 83eb4a884c73a52a0ce2d7466366a7302413dbb5
 
 ”渐进增强“意为用额外的信息层包裹原始数据（html结构层），CSS负责提供"表示"信息，JS负责提供“行为”信息。按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
 
@@ -210,18 +202,6 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
   畏难无用，慢慢梳理总能明白每一步是怎么回事，模仿也是学习方法的一种。              
 
-<<<<<<< HEAD
-  编程学习最好以项目推进，单学语法一个月就会遗忘超过半数。
-=======
-##### 思索
-##### 不正经的后记
-因为扯得太多，单独成篇了，罪过罪过。
-
-
-
-
-
->>>>>>> 83eb4a884c73a52a0ce2d7466366a7302413dbb5
 
 
 
