@@ -150,7 +150,7 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 * 压缩脚本
 
   JavaScript 代码压缩是指去除源代码里的所有不必要的字节，如删除空格与注释，从而达到压缩文件的目的。
-​	[JavaScript Minifier](https://www.toptal.com/developers/javascript-minifier/)
+- 工具：[JavaScript Minifier](https://www.toptal.com/developers/javascript-minifier/)
 
 
 
