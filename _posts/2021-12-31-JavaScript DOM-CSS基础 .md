@@ -159,7 +159,7 @@ tags:
 
    * 不建议使用align居中，建议设置`margin-left/right`，或`margin：0 auto`
 
-   * ![img](img/post-domcss.table].jpg)
+   * ![img](/img/post-domcss.table].jpg)
 
 4. ##### ！函数始终不起作用
 
