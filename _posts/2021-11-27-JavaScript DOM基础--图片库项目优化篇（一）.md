@@ -18,6 +18,7 @@ tags:
 规范: 1. 分离CSS与样式 2. 考虑浏览器兼容 3. 考虑性能
 
 #### 完整JS代码
+
 ``````javascript
 //事件函数
 function showPic(whichpic) {
@@ -79,14 +80,18 @@ addLoadEvent(prepareGallery);
 - 结构层：由html之类的标记语言创建，由标签对页面内容的含义做出描述。
 - 表示层：由CSS负责完成，描述页面内容的呈现效果。
 - 行为层：由JS和DOM主宰，负责内容该如何响应事件。
-- 
-”渐进增强“意为用额外的信息层包裹原始数据（html结构层），CSS负责提供"表示"信息，JS负责提供“行为”信息。按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
+
+”渐进增强“意为用额外的信息层包裹原始数据（html结构层），CSS负责提供"表示"信息，JS负责提供“行为”信息。
+
+按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
 
 **分离JS和CSS**
+
 分离表示层：` <head><link rel="stylesheet" href="gallery.css" type="text/css"></head>`     
 分离行为层：`<body> <script src="gallery.js" type="text/javascript"></script></body>`放在body末尾
 
 **分离事件处理函数**
+
 事件处理函数添加给某个元素，可在特定事件发生时调用特定的JS代码，在html中语法如下：  
 `<lable event = "JavaScript statement(s)"></lable> //JavaScript statement(s)可以是JS中的自定义函数`  
 
