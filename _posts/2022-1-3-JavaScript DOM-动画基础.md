@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JavaScript DOM-CSS基础"
+title: "JavaScript DOM-动画基础"
 date: 2022-1-3
 author: "何短短"
 header-img: img/post-bg2-js.jpg
