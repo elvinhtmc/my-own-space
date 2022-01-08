@@ -42,7 +42,7 @@ merge汇总时，不同分支的代码可能存在冲突，需要调整为唯一
 
 如果明确有一方的代码都正确，可以在“source control”侧边栏“merge changes”右键目标文件，选择“accept all current"或"accept all incoming",选择只采用一方的代码。
 
-<img src ="/img/post-gitmerge-sidecolumn.jpg" width="300px" align="left" >
+<img src ="/img/post-gitmerge-sidecolumn.jpg" width="300px" align="left" ><br>
 
 如果是别人的代码，实在不知道如何解决冲突，`可以git merge--abort`放弃合并，去找能处理该冲突的人，硬改可能会出大错。
 
@@ -72,9 +72,7 @@ merge汇总时，不同分支的代码可能存在冲突，需要调整为唯一
 ---------------------------------------
 
 ##### 参考资料
-[Fengyu. 40分钟学会git](https://www.bilibili.com/video/BV1db4y1d79C?spm_id_from=333.999.0.0)      
-
- [git文件四种状态](https://www.cnblogs.com/thirteen-yang/p/13878118.html)
-
+[Fengyu. 40分钟学会git](https://www.bilibili.com/video/BV1db4y1d79C?spm_id_from=333.999.0.0)                 
+[git文件四种状态](https://www.cnblogs.com/thirteen-yang/p/13878118.html)           
 [廖雪峰git教程](https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344) （！实用强推）
 
