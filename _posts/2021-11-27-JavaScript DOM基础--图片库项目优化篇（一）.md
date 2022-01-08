@@ -74,9 +74,9 @@ addLoadEvent(prepareGallery);
 
 #### 项目优化
 
-##### 1. 渐进增强，平稳退化
+##### 1. 渐进增强，平稳退化<br>
 
-我们在浏览器中看到的网页其实是由以下三层信息构成的一个共同体：
+我们在浏览器中看到的网页其实是由以下三层信息构成的一个共同体：<br>
 - 结构层：由html之类的标记语言创建，由标签对页面内容的含义做出描述。
 - 表示层：由CSS负责完成，描述页面内容的呈现效果。
 - 行为层：由JS和DOM主宰，负责内容该如何响应事件。
@@ -85,13 +85,11 @@ addLoadEvent(prepareGallery);
 
 按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
 
-**分离JS和CSS**
-
+**分离JS和CSS**<br>
 分离表示层：` <head><link rel="stylesheet" href="gallery.css" type="text/css"></head>`     
 分离行为层：`<body> <script src="gallery.js" type="text/javascript"></script></body>`放在body末尾
 
-**分离事件处理函数**
-
+**分离事件处理函数**<br>
 事件处理函数添加给某个元素，可在特定事件发生时调用特定的JS代码，在html中语法如下：  
 `<lable event = "JavaScript statement(s)"></lable> //JavaScript statement(s)可以是JS中的自定义函数`  
 
@@ -101,7 +99,6 @@ addLoadEvent(prepareGallery);
 `element.event = action → getElementById(id).event = action`
 
 对于多个元素，具体步骤如注释1~3： 
-
 ``````javascript
 //涉及多个元素，把事件添加到具有特定属性的数组上
 var links = gallery.getElementsByTagName("a");  //1.把文档里的所有链接放入一个数组
