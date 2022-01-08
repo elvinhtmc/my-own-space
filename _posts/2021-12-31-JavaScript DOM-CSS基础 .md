@@ -147,9 +147,8 @@ tags:
    [MDN table](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table)(有很多被废弃的属性)
 
    [MDN 用dom方法创建表格（方法与表格结构的梳理）](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces)
-
-   
-
+ ![img](/img/post-domcss.table].jpg)
+ 
    * 只有table，th和td有独立的边框；tr没有，css设置无用。這些元素都有bgcolor。
 
    * html5不支持`cellspacing`，用`border-collapse: collapse`代替
@@ -158,8 +157,6 @@ tags:
      > collapse :　 相邻边被合并
 
    * 不建议使用align居中，建议设置`margin-left/right`，或`margin：0 auto`
-
-   * ![img](/img/post-domcss.table].jpg)
 
 4. ##### ！函数始终不起作用
 
