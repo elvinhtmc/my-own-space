@@ -12,7 +12,7 @@ tags:
 
 该图片库项目”imagegallery来自《JavaScript DOM编程艺术》，通过它来巩固DOM基础，学习网页制作规范。
 
-**项目要求**：
+**项目要求**：<br>
 网页结构：图片选项、图片占位符与图片简介          
 网页交互：点击选项即可在占位符位置更换图片与图片简介，停留在原页面，链接不跳转          
 规范: 1. 分离CSS与样式 2. 考虑浏览器兼容 3. 考虑性能
@@ -159,7 +159,7 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
   总的来说在js中对于return用法的三种情况的总结如下：
 
-  - retrun true； 返回正确的处理结果。
+  - return true； 返回正确的处理结果。
 
   - return false；
 
@@ -175,7 +175,8 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
        常见于`onclick = "function(); return false;"`
 
-  - return；把控制权返回给页面。\
+  - return；把控制权返回给页面。
+ <br>
 * **文本节点与元素节点之间的关系**
   ​	<img src="/img/post-imagegallery-dom.png" width="500px">
 
