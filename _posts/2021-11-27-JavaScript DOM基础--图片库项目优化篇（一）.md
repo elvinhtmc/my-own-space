@@ -176,7 +176,7 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
        常见于`onclick = "function(); return false;"`
 
   - return；把控制权返回给页面。
- <br>
+ <br><br>
 * **文本节点与元素节点之间的关系**
   ​	<img src="/img/post-imagegallery-dom.png" width="500px">
 
