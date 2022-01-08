@@ -1,4 +1,13 @@
-JavaScript DOM-CSS基础
+---
+layout: post
+title: "JavaScript DOM-CSS基础"
+date: 2021-12-31
+author: "何短短"
+header-img: img/post-bg2-js.jpg
+catalog: true
+tags: 
+  -JavaScript
+---
 
 #### 基础概念与方法
 
@@ -138,9 +147,8 @@ JavaScript DOM-CSS基础
    [MDN table](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table)(有很多被废弃的属性)
 
    [MDN 用dom方法创建表格（方法与表格结构的梳理）](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces)
-
-   
-
+ ![img](/img/post-domcss.table].jpg)
+ 
    * 只有table，th和td有独立的边框；tr没有，css设置无用。這些元素都有bgcolor。
 
    * html5不支持`cellspacing`，用`border-collapse: collapse`代替
@@ -148,11 +156,7 @@ JavaScript DOM-CSS基础
      > separate :　 默认值。边框独立（标准HTML）
      > collapse :　 相邻边被合并
 
-   * 不建议使用align居中
-
-     > 设置margin-left/right，或margin：0 auto
-
-   * ![img](/img/post-domcss.jpg)
+   * 不建议使用align居中，建议设置`margin-left/right`，或`margin：0 auto`
 
 4. ##### ！函数始终不起作用
 
@@ -196,7 +200,7 @@ JavaScript DOM-CSS基础
 
      在修改了`addClass()`和之前的`addLoadEvents(func) `后，运行恢复正常，说明可能是函数冲突/错误导致报错，但原因不完全确定。
 
-     **! 添加多个<script>时，一个js文件的错误可能导致连锁报错，因此一次性运行所有js文件会导致纠错困难。最好一个一个运行（添加断点或转为注释），这样便于纠察js文件内部的错误，而暂时无需考虑文件间的冲突。**
+     **! 添加多个\<script>时，一个js文件的错误可能导致连锁报错，因此一次性运行所有js文件会导致纠错困难。最好一个一个运行（添加断点或转为注释），这样便于纠察js文件内部的错误，而暂时无需考虑文件间的冲突。**
 
      
 

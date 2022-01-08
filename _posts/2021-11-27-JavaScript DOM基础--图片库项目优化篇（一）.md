@@ -1,15 +1,21 @@
-<<<<<<< HEAD
-JavaScript DOM基础--图片库项目优化篇
-
+---
+layout: post
+title: "JavaScript DOM基础--图片库项目优化篇（一）"
+date: 2021-11-27
+author: "何短短"
+header-img: img/post-bg2-js.jpg
+catalog: true
+tags: 
+  -JavaScript
+---
 #### 项目简介（imggalleryProject）
 
 该图片库项目”imagegallery来自《JavaScript DOM编程艺术》，通过它来巩固DOM基础，学习网页制作规范。
 
-**项目要求**：
-
-* 网页结构：图片选项、图片占位符与图片简介
-* 网页交互：点击选项即可在占位符位置更换图片与图片简介，停留在原页面，链接不跳转 
-* 规范: 1. 分离CSS与样式 2. 考虑浏览器兼容 3. 考虑性能
+**项目要求**：<br>
+网页结构：图片选项、图片占位符与图片简介          
+网页交互：点击选项即可在占位符位置更换图片与图片简介，停留在原页面，链接不跳转          
+规范: 1. 分离CSS与样式 2. 考虑浏览器兼容 3. 考虑性能
 
 #### 完整JS代码
 
@@ -65,57 +71,34 @@ function addLoadEvent(func) {
 addLoadEvent(prepareGallery);
     //创建执行函数的队列
 ``````
-=======
----
-layout: post
-title: "JavaScript DOM基础--图片库项目优化篇（一）"
-date: 2021-11-27
-author: "何短短"
-header-img: img/post_bg1_blue.png
-catalog: true
-tags: 
-  -JavaScript
----
->>>>>>> 83eb4a884c73a52a0ce2d7466366a7302413dbb5
 
 #### 项目优化
 
-##### 1. 渐进增强，平稳退化
+##### 1. 渐进增强，平稳退化<br>
 
-我们在浏览器中看到的网页其实是由以下三层信息构成的一个共同体：
+我们在浏览器中看到的网页其实是由以下三层信息构成的一个共同体：<br>
+- 结构层：由html之类的标记语言创建，由标签对页面内容的含义做出描述。
+- 表示层：由CSS负责完成，描述页面内容的呈现效果。
+- 行为层：由JS和DOM主宰，负责内容该如何响应事件。
 
-​	结构层：由html之类的标记语言创建，由标签对页面内容的含义做出描述。
+”渐进增强“意为用额外的信息层包裹原始数据（html结构层），CSS负责提供"表示"信息，JS负责提供“行为”信息。
 
-​	表示层：由CSS负责完成，描述页面内容的呈现效果。
+按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
 
-<<<<<<< HEAD
-​	行为层：由JS和DOM主宰，负责内容该如何响应事件。
-=======
-##### 原始代码
->>>>>>> 83eb4a884c73a52a0ce2d7466366a7302413dbb5
-
-”渐进增强“意为用额外的信息层包裹原始数据（html结构层），CSS负责提供"表示"信息，JS负责提供“行为”信息。按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
-
-* **分离JS和CSS**
-
-分离表示层：` <head><link rel="stylesheet" href="gallery.css" type="text/css"></head>` 
-
+**分离JS和CSS**<br>
+分离表示层：` <head><link rel="stylesheet" href="gallery.css" type="text/css"></head>`     
 分离行为层：`<body> <script src="gallery.js" type="text/javascript"></script></body>`放在body末尾
 
-*  **分离事件处理函数**
-
-事件处理函数添加给某个元素，可在特定事件发生时调用特定的JS代码，在html中语法如下：
-
-`<lable event = "JavaScript statement(s)"></lable> //JavaScript statement(s)可以是JS中的自定义函数`
+**分离事件处理函数**<br>
+事件处理函数添加给某个元素，可在特定事件发生时调用特定的JS代码，在html中语法如下：  
+`<lable event = "JavaScript statement(s)"></lable> //JavaScript statement(s)可以是JS中的自定义函数`  
 
 类似给元素添加style属性，在html文档中使用onclick之类的属性既没有效率又容易引发问题，不如将事件分离出去。要将内嵌的事件处理函数分离到外部JS文件，关键在于确定这个事件的元素。
 
-对于一个元素，可以利用class或id属性来解决：
-
+对于一个元素，可以利用class或id属性来解决：  
 `element.event = action → getElementById(id).event = action`
 
 对于多个元素，具体步骤如注释1~3： 
-
 ``````javascript
 //涉及多个元素，把事件添加到具有特定属性的数组上
 var links = gallery.getElementsByTagName("a");  //1.把文档里的所有链接放入一个数组
@@ -158,8 +141,7 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 //如果浏览器不理解名为getElementById/getElementsByTagName的DOM方法，请离开
 ``````
 
-又如针对性测试 ` if (!document.getElementById("imagegallery")) return false;`
-
+又如针对性测试 `if (!document.getElementById("imagegallery")) return false;`  
 即使将来该imagegallery表单被删除，也不必担心网页的JS代码出错。
 
 ##### 3. 性能考虑
@@ -171,8 +153,7 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 * 压缩脚本
 
   JavaScript 代码压缩是指去除源代码里的所有不必要的字节，如删除空格与注释，从而达到压缩文件的目的。
-
-​	[JavaScript Minifier](https://www.toptal.com/developers/javascript-minifier/)
+- 工具：[JavaScript Minifier](https://www.toptal.com/developers/javascript-minifier/)
 
 
 
@@ -182,9 +163,9 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
   总的来说在js中对于return用法的三种情况的总结如下：
 
-  - retrun true； 返回正确的处理结果。
+  - `return true`； 返回正确的处理结果。
 
-  - return false；
+  - `return false`；
 
     1. 返回错误的处理结果 
 
@@ -198,11 +179,11 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
        常见于`onclick = "function(); return false;"`
 
-  - return；把控制权返回给页面。
-
+  - `return`；把控制权返回给页面。
+ <br>
+ <br>
 * **文本节点与元素节点之间的关系**
-
-  ​	![img](/img/post-imagegallery-dom.png)
+  ​	<img src="/img/post-imagegallery-dom.png" width="500px">
 
   文本节点和属性节点总被包含在元素节点内，是元素节点的子节点，可以通过`childNodes[n]`查找与调用。在这个练习中，p元素本身的nodeValue为空值，其子节点（文本节点）的值才对应文本内容,`description.childnodes[0].nodeValue=text`。
 
@@ -210,18 +191,6 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
   畏难无用，慢慢梳理总能明白每一步是怎么回事，模仿也是学习方法的一种。              
 
-<<<<<<< HEAD
-  编程学习最好以项目推进，单学语法一个月就会遗忘超过半数。
-=======
-##### 思索
-##### 不正经的后记
-因为扯得太多，单独成篇了，罪过罪过。
-
-
-
-
-
->>>>>>> 83eb4a884c73a52a0ce2d7466366a7302413dbb5
 
 
 
