@@ -157,11 +157,9 @@ tags:
      > separate :　 默认值。边框独立（标准HTML）
      > collapse :　 相邻边被合并
 
-   * 不建议使用align居中
+   * 不建议使用align居中，建议设置`margin-left/right`，或`margin：0 auto`
 
-     > 设置margin-left/right，或margin：0 auto
-
-   * ![img](/img/post-domcss.jpg)
+   * ![img](img/post-domcss.jpg)
 
 4. ##### ！函数始终不起作用
 
