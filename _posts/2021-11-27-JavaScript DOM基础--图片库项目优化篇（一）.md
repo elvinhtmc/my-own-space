@@ -76,9 +76,9 @@ addLoadEvent(prepareGallery);
 ##### 1. 渐进增强，平稳退化
 
 我们在浏览器中看到的网页其实是由以下三层信息构成的一个共同体：
--结构层：由html之类的标记语言创建，由标签对页面内容的含义做出描述。
--表示层：由CSS负责完成，描述页面内容的呈现效果。
--行为层：由JS和DOM主宰，负责内容该如何响应事件。
+- 结构层：由html之类的标记语言创建，由标签对页面内容的含义做出描述。
+- 表示层：由CSS负责完成，描述页面内容的呈现效果。
+- 行为层：由JS和DOM主宰，负责内容该如何响应事件。
 ”渐进增强“意为用额外的信息层包裹原始数据（html结构层），CSS负责提供"表示"信息，JS负责提供“行为”信息。按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
 
 **分离JS和CSS**
@@ -89,7 +89,8 @@ addLoadEvent(prepareGallery);
 事件处理函数添加给某个元素，可在特定事件发生时调用特定的JS代码，在html中语法如下：  
 `<lable event = "JavaScript statement(s)"></lable> //JavaScript statement(s)可以是JS中的自定义函数`  
 
-类似给元素添加style属性，在html文档中使用onclick之类的属性既没有效率又容易引发问题，不如将事件分离出去。要将内嵌的事件处理函数分离到外部JS文件，关键在于确定这个事件的元素。  
+类似给元素添加style属性，在html文档中使用onclick之类的属性既没有效率又容易引发问题，不如将事件分离出去。要将内嵌的事件处理函数分离到外部JS文件，关键在于确定这个事件的元素。
+
 对于一个元素，可以利用class或id属性来解决：  
 `element.event = action → getElementById(id).event = action`
 
@@ -159,9 +160,9 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
   总的来说在js中对于return用法的三种情况的总结如下：
 
-  - return true； 返回正确的处理结果。
+  - `return true`； 返回正确的处理结果。
 
-  - return false；
+  - `return false`；
 
     1. 返回错误的处理结果 
 
@@ -175,8 +176,9 @@ addLoadEvent（secondfunction）;//将函数添加到执行队列
 
        常见于`onclick = "function(); return false;"`
 
-  - return；把控制权返回给页面。
- <br><br>
+  - `return`；把控制权返回给页面。
+ <br>
+ <br>
 * **文本节点与元素节点之间的关系**
   ​	<img src="/img/post-imagegallery-dom.png" width="500px">
 
