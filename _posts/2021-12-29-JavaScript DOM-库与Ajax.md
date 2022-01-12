@@ -1,191 +1,87 @@
-JavaScript DOM基础--图片库项目优化篇
+JavaScript--初识库与框架（转载+笔记）
 
-#### 项目简介
+这篇文章仅为扫盲，帮助了解javaScript学习体系。
 
-该图片库项目”imagegallery来自《JavaScript DOM编程艺术》，通过它来巩固DOM基础，学习网页制作规范。
+#### 初识框架和库（[该部分转载自CSDN博主「DebugDream」](https://blog.csdn.net/weixin_41146340/article/details/79385244)）
+对于好多初学者来说（例如我）,很容易把框架和库搞混淆,分不清它们的具体区别,直到现在我也不是把框架和库搞得很清晰。只是站在初学者的角度，对框架和库的区别有自己的认识和见解。所以今天想在这，给和我一样的初学者剖析下它两者都有哪些区别，以便于我们能更好的在实际开发中应用框架和库。
 
-**项目要求**：
+简单地来分析，我们把框架（Framework）和库（Library，简写Lib）可以用我们生活中的例子来阐述。
 
-* 网页结构：图片选项、图片占位符与图片简介
-* 网页交互：点击选项即可在占位符位置更换图片与图片简介，停留在原页面，链接不跳转 
-* 规范: 1. 分离CSS与样式 2. 考虑浏览器兼容 3. 考虑性能
+假如我们要买一台电脑，框架为我们提供了已经装好的电脑，我们只要买回来就能用，但前提是你必须把整个电脑要买回来。另外，我们还必须根据框架设定的使用规则来使用电脑。虽然这样用户可能轻松许多，但会导致很多人用一样的电脑，或你想自定义某个部件将需要修改这个框架。而库就如自己组装的电脑。库为我们提供了很多部件，我们需要自己组装，如果某个部件库未提供，我们也可以自己做。
 
-#### 完整JS代码
+库的使用非常灵活，但没有框架方便，这就是框架和库本质的区别。
 
-``````javascript
-//事件函数
-function showPic(whichpic) {
-    if (!document.getElementById("placeholder")) return true;
-    if (!document.getElementById("description")) return false;
-    var source = whichpic.getAttribute("href");
-    var placeholder = document.getElementById("placeholder");
-    placeholder.setAttribute("src",source);
-    if (whichpic.getAttribute("title")) {
-      var text = whichpic.getAttribute("title");
-    } else {
-      var text = "";
-    }
-    var description = document.getElementById("description");
-    if (description.firstChild.nodeType == 3) {
-      description.firstChild.nodeValue = text;
-    }
-    return false;
-  }
-//测试检查
-function prepareGallery() {
-    if (!document.getElementById) return false;
-    if (!document.getElementsByTagName) return false;
-     //前两项是普遍适用性测试，检查浏览器能否理解dom操作，保证不理解的老浏览器不会执行该函数
-    if (!document.getElementById("imagegallery")) return false;
-    //第三项检查列表元素是否存在，不存在则无必要执行函数
-    var gallery = document.getElementById("imagegallery"); //简化
-    var links = gallery.getElementsByTagName("a");
-    for (var i = 0; i < links.length; i++) {
-        links[i].onclick = function () {
-            showPic(this);
-            return false;//禁止默认跳转行为
-        }
-        //function(）匿名函数，内部所有语句在links元素链接被点击时执行
-        links[i].onkeypress = links[i].onclick; //onkeypress容易出错，用onclick即可包含其大部分功能
-    }
-}
-//必须让js代码在html文档全部加载到浏览器后立马执行（太早太晚DOM都可能不完整）
-function addLoadEvent(func) {
-    var oldonload = window.onload;//简化
-    if (typeof window.onload != "function") {
-        window.onload = func;
-    } else {
-        window.onload = function () {
-            oldonload();
-            func();
-        }
-    }
-}
-addLoadEvent(prepareGallery);
-    //创建执行函数的队列
+#### 框架和库的区别：
+
+> 简单来说：库是已经制作好的零件，选取、组装、补充、使用较为灵活；框架是为某类问题提供的一整套解决方案，调用时取用整个框架，且需要遵循框架的使用规则。实际上，可以用库架构出自己的框架。
+
+1.库是将代码集合成的一个产品，供程序员调用。
+
+面向对象的代码组织形式而成的库也叫类库。面向过程的代码组织形式而成的库叫函数库。在函数库中的可直接使用的函数叫库函数。
+
+我们在实际开发中，如果需要用到库，只需要使用库内我们所需的某部分类或函数，然后自己再实现其他部分的功能。直白的说，库为我们提供了很多封装好的函数，看起来零零散散，但是我们使用起来比较灵活，就是哪里需要，我们就取它里面我们所需的某部分，用不到它的地方我们自己来实现。
+
+2.框架则是为解决一个(一类)问题而开发的产品。
+框架用户一般只需要使用框架提供的类或函数，即可实现全部功能。
+
+我们在开发中使用框架的时候，框架为我们提供了一条龙服务，一整套的服务，我们调用框架的时候，取的是整个框架，必须使用这个框架的全部代码，即使有些地方的代码我们用不到，但是我们不能挑三拣四。而且，我们使用框架的时候，必须按照框架设定好的使用规则来使用它，相当于你找别人帮忙，你得听人家的话，按人家的吩咐办事，虽然别人帮你时你可能会轻松，但是你必须听人家的，按人家的意思来。这些点可能让有些人觉得框架不是很灵活。
+
+另外，库和框架还有个很大的区别就是： inversion of control. 也就是your code calls a library but a framework calls your code,
+
+卖完关子了，现在我们来细说这个区别。也就是说：当你在调用library的时候，你是按照自己的意愿来control它，比如jQuery（下文还会细说jQuery）。而，对于framework， 那么control就是倒转过来了，是它在control你，比如bootstrap。
+
+**小结：**
+上面我们都说过了，使用库的时候我们比较随意，想用哪取哪，哪块好用哪，而且把它拿过来可以按照我们的编写意愿来用。但是框架就不一样，我们好像被它控制着，要使用它，就得听它的，按照它的规则来，即使它某些地方我们用不到，或者不喜欢，也不能说什么。
+
+**扩展：**
+我们来把上面遗留的jQuery说清楚。jQuery 的定位显得棱模两可，可以说是库，也可以说是框架，为什么这么说呢？
+
+官方的来说，框架也算是库的一种，但倾向于重量级一些，倾向于提供整套的解决方案，倾向于创造一些需要你来遵守的规则和范例。而JQuery属于Java家族，它是一种快捷，小巧，功能丰富的JavaScript库。
+
+所以，你可以把它当成框架来使用。以jQuery为基础架构出你自己的框架。因此我们没必要在这个问题上纠结，我就当它是库，但是可以当框架来用。
+
+还有一点要说的是，JQuery提高的是你的工作效率，并不是代码的运行效率。它只是减少了你需要敲的代码量，但是它的执行效率不一定有原生JS的效率高，除非你原生JS写的特别差。
+
+在实际中，像angular、backbone、vue就属于框架，而jQuery、react、underscore就是库，
+
+就单拿React来说吧，官网自己也说了它是库:
+
+React is a declarative, efficient, and flexible JavaScript library for building user interfaces.
+
+因为框架是有一套解决方案的，React就是纯粹写UI组件的 没有什么异步处理机制、模块化、表单验证这些。React和react-router, react-redux结合起来才叫框架，而React本身只是充当一个前端渲染的库而已。
+
+#### 如何选择合适的库
+
+* 具备你所需要的功能，但功能不要过多。
+
+* 模块化，把不同功能分割保存到不同文件中，这样你可以只加载具备相应功能的文件，降低下载量。
+
+* 支持情况好，背后用活跃的开发人员维护，修bug和改进功能。
+
+* 有官方文档。
+
+* 许可合适，自己的用途包含在许可范围内。
+
+#### 通过内容分发网络（CDN）共享库
+
+尽可能减少网页文档大小，并让浏览器缓存文件，且让用户更快加载页面是有必要的。如果有很多站点要使用一个库，最好把这个库托管在一个公共服务器上，以便所有站点共享和访问。这样，当用户跳转站点时无需重新下载相同的文件。
+
+内容分发网络(CDN)可以解决分布共享库的问题，CDN作为由服务器构成的网络，可用来分散存储一些公共的内容。CDN中每台服务器都包含库的一份副本。这些服务器分散在不同国家地区，以便达到利用带宽和加速下载的目的。浏览器防蚊裤时使用一个公共URL，CDN底层便会通过地理位置最近且加载速度最快的服务器提供相应文件。
+
+Google为很多库提供了免费CDN服务，如jQuery，使用该库方法和使用其他js文件一样：
+
+``````js
+<script src="http://ajax.googleapis.com/ajax/libs/jQuery/→ 1.4.3/jQuery.min.js">
+</script>
 ``````
 
-#### 项目优化
+如果觉得不保险，担心CDN崩掉，可以提供后备\<script>标签，以便在CDN不可用时从本地服务器下载文件。
 
-##### 1. 渐进增强，平稳退化
-
-”渐进增强“意为用额外的信息层包裹原始数据（html网页结构），CSS负责提供"表示"信息，JS负责提供“行为”信息。按照“渐进增强原则创建出的网页几乎都符合”平稳退化“原则，即，虽然浏览器不支持CSS/JS，最基本的操作依然可以完成。在本例中，我们通过分离JS（内含事件处理函数）和CSS来优化网页。
-
-* **分离JS和CSS**
-
-分离表示层：` <head><link rel="stylesheet" href="gallery.css" type="text/css"></head>` 
-
-分离行为层：`<body> <script src="gallery.js" type="text/javascript"></script></body>`放在body末尾
-
-*  **分离事件处理函数**
-
-事件处理函数添加给某个元素，可在特定事件发生时调用特定的JS代码，在html中语法如下：
-
-`<lable event = "JavaScript statement(s)"></lable> //JavaScript statement(s)可以是JS中的自定义函数`
-
-类似给元素添加style属性，在html文档中使用onclick之类的属性既没有效率又容易引发问题，不如将事件分离出去。要将内嵌的事件处理函数分离到外部JS文件，关键在于确定这个事件的元素。
-
-对于一个元素，可以利用class或id属性来解决：
-
-`element.event = action → getElementById(id).event = action`
-
-对于多个元素，具体步骤如注释1~3： 
-
-``````javascript
-//涉及多个元素，把事件添加到具有特定属性的数组上
-var links = gallery.getElementsByTagName("a");  //1.把文档里的所有链接放入一个数组
-    for (var i = 0; i < links.length; i++) {    //2.遍历数组
-        links[i].onclick = function () {     //3.为满足条件的元素添加事件，并在发生行为时调用函数
-            showPic(this);
-            return false;//禁止默认的跳转行为
-        }
-        //function(）匿名函数，内部所有语句在links元素链接被点击时执行
-        links[i].onkeypress = links[i].onclick;
-    }
-}
+``````js
+//在CDN托管的库引用后加一行
+<script>!window.jQuery && document.write(unescape("%3C→script src='/Script/jquery-1.4.1.min.js' type='text/javascript' %3E%3C/script%3E"));
+</script>
 ``````
-
-为了保证DOM的完整性，必须让这些代码在HTML全部加载到浏览器后马上开始执行，即把函数添加到windows对象的onload事件上去。下面的addLoadEvent函数是很好的方案，不管我们打算在页面加载完毕后执行多少个函数，它都可以应对自如，只需将页面加载后执行函数的名字添加到参数。具体步骤如下：
-
-``````javascript
-function addLoadEvent(func) {
-    var oldonload = window.onload;//1. 把现有window.onload的值存入变量，简化
-    if (typeof window.onload != "function") {
-        window.onload = func; //2. 如果这个函数上没绑定任何函数，就为事件（加载页面）添加新函数
-    } else {
-        window.onload = function () { //3. 如果已经绑定了一些函数，就把新函数追加到事件的末尾
-            oldonload();
-            func();
-        }
-    }
-}
-addLoadEvent（firstfunction）;
-addLoadEvent（secondfunction）;//将函数添加到执行队列
-``````
-
-##### 2. 对象检测，向后兼容
-
-不同浏览器对JS支持程度不同，绝大多数浏览器对DOM支持都不错，但较古老的浏览器可能无法理解DOM提供的方法与属性。针对这一问题的最简解决方案式：检测浏览器对JS的支持程度。几乎所有东西（包括各种方法）都可以视作对象，我们可以通过`if（！method）`把不支持某特定方法的浏览器检测出来。如通用检测：
-
-``````javascript
- if (!document.getElementById) return false;
- if (!document.getElementsByTagName) return false;
-//如果浏览器不理解名为getElementById/getElementsByTagName的DOM方法，请离开
-``````
-
-又如针对性测试 ` if (!document.getElementById("imagegallery")) return false;`
-
-即使将来该imagegallery表单被删除，也不必担心网页的JS代码出错。
-
-##### 3. 性能考虑
-
-* 尽量少访问DOM和尽量减少标记
-
-  只要查询DOM中的某些元素，浏览器都会搜索整个DOM树，从中查找可能匹配的元素。因此最好把第一次查找的结果保存在一个变量中，然后再循环里复用，而不是每次都写完整的`document.getElementsByTagName("a")`
-
-* 压缩脚本
-
-  JavaScript 代码压缩是指去除源代码里的所有不必要的字节，如删除空格与注释，从而达到压缩文件的目的。
-
-​	[JavaScript Minifier](https://www.toptal.com/developers/javascript-minifier/)
-
-
-
-#### 细节补充
-
-* **return**
-
-  总的来说在js中对于return用法的三种情况的总结如下：
-
-  - retrun true； 返回正确的处理结果。
-
-  - return false；
-
-    1. 返回错误的处理结果 
-
-    2. 终止处理             
-
-       函数应该只有一个出口和入口，但在实际工作中，拘泥这项原则往往会导致代码难以阅读。函数可以有多个出口，只要这些出口集中在函数的开头部分，就是可以接受的。常见于if的多层嵌套。
-
-    3. 阻止提交表单 
-
-    4. 阻止执行默认的行为
-
-       常见于`onclick = "function(); return false;"`
-
-  - return；把控制权返回给页面。
-
-* **文本节点与元素节点之间的关系**
-
-  ​	![img](/img/post-imagegallery-dom.png)
-
-  文本节点和属性节点总被包含在元素节点内，是元素节点的子节点，可以通过`childNodes[n]`查找与调用。在这个练习中，p元素本身的nodeValue为空值，其子节点（文本节点）的值才对应文本内容,`description.childnodes[0].nodeValue=text`。
-
-  #### 思索
-
-  畏难无用，慢慢梳理总能明白每一步是怎么回事，模仿也是学习方法的一种。              
-
-  编程学习最好以项目推进，单学语法一个月就会遗忘超过半数。
 
 
 
