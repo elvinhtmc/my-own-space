@@ -1,4 +1,13 @@
-
+---
+layout: post
+title: "JavaScript DOM-CSS基础"
+date: 2022-1-8
+author: "何短短"
+header-img: img/post-bg2-js.jpg
+catalog: true
+tags: 
+  -JavaScript基础
+---
 
 ### html5简介
 
