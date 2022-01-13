@@ -1,4 +1,13 @@
-JavaScript--初识库与框架（转载+笔记）
+---
+layout: post
+title: "初识库与框架（转载+笔记）"
+date: 2022-1-12
+author: "何短短"
+header-img: img/post-bg2-js.jpg
+catalog: true
+tags: 
+  -JavaScript基础
+---
 
 这篇文章仅为扫盲，帮助了解javaScript学习体系。
 
