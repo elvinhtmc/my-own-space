@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "JS高级程序设计-1~4章-语言基础"
-date: 2022-1-13
+title: "JS高级程序设计-1~3章-语言基础"
+date: 2022-1-14
 author: "何短短"
 header-img: img/post-bg2-js.jpg
 catalog: true
