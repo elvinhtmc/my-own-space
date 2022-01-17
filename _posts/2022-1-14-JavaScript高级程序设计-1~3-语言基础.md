@@ -437,5 +437,3 @@ function function_name( parameter list )
 ``````
 
 ECMAScript函数不需要指定函数的返回值，因为任何函数可以在任何时候返回值。不指定返回值的函数实际上会返回特殊值undefined。
-
-
