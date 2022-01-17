@@ -140,7 +140,7 @@ o1.name = 'Jake';//(√)
 
 ECMAScript变量可以包含两种不同类型的数据：原始值和引用值。
 
-#### 原始值--简单数据类型
+##### 原始值--简单数据类型
 
 > 7种，可使用 typeof 运算符检查，而且彼此之间存在互相转换的方法。无需记忆，在使用时增进了解，具体细节查阅《JavaScript高级程序设计》P30~P56，下面简单介绍。
 
@@ -223,7 +223,7 @@ printf("十六进制数 %x",hexadecimal);
 
 **6.BigInt**<br>**7.Symbol**
 
-#### [引用值--Object对象]((2022-1-14-JavaScript高级程序设计-5~6-引用类型.md))
+##### [引用值--Object对象]((2022-1-14-JavaScript高级程序设计-5~6-引用类型.md))
 
 > 点击跳转至后续文章，第5、6章
 
@@ -297,7 +297,7 @@ let num3 = (5, 4, 3)//num3==3
 
 #### 语句(流控制)
 
-#### `if` & `switch`（条件）
+##### `if` & `switch`（条件）
 
 ``````js
 if(condition) statement1 else statement
@@ -334,7 +334,7 @@ switch (true) {
 }
 ``````
 
-#### `do-while` &`while`（循环）
+##### `do-while` &`while`（循环）
 
 ``````js
 while(expression) statement;//检测出口
@@ -343,7 +343,7 @@ do {
 } while (expression)//do while循环体在退出前至少执行一次
 ``````
 
-#### `for`(循环，常用方式)
+##### `for`(循环，常用方式)
 
 ``````js
 for(初始化 ; 出口判定式 ; 更新) statement;
@@ -353,7 +353,7 @@ for(let i=0; i>5; i++){
 }
 ``````
 
-#### ` for-in & for-of`（循环，常用于遍历数组或对象）
+##### ` for-in & for-of`（循环，常用于遍历数组或对象）
 
 参考：[for in 和 for of 的区别](https://juejin.cn/post/6916058482231754765)
 
@@ -377,7 +377,7 @@ for (const val of array1) {
 }// a b c
 ``````
 
-#### `label`（标签语句）
+##### `label`（标签语句）
 
 `lable: statement;`标签语句用于给语句加标签，方便后续通过`break`或`continue`语句引用。常用于Java，JS也可用。
 
@@ -398,7 +398,7 @@ for (var i=0; i<10; i++) {
 alert(iNum);	//输出 "55"
 ``````
 
-#### `break` & `continue`（控制循环）
+##### `break` & `continue`（控制循环）
 
 `break`退出整个循环，`continue`退出本轮循环。
 
