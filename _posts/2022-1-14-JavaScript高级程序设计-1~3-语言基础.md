@@ -12,7 +12,7 @@ tags:
 
 之前学过C语言，也读了《C primer plus》，而js的语法很大程度借鉴了C语言。因此该书前四章只记录重点，并补充C语言知识促进理解。
 
-### 第一章--什么是JavaScript
+#### 第一章--什么是JavaScript
 
 #### 什么是ECMAScript
 
@@ -34,7 +34,7 @@ JavaScript 是 ECMAScript 规范的一种实现，它和ECMAScript 基本算同�
 
 * **BOM（浏览器对象模型）**：提供与浏览器交互的方法与接口（拓展）
 
-### 第二章-HTML中的JavaScript
+#### 第二章-HTML中的JavaScript
 
 #### \<script>元素    
  [MDN\<script>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)    
@@ -62,8 +62,7 @@ JavaScript是通过\<script>元素插入到HTML页面中的，这个元素可用
 
 指定在浏览器 不支持脚本/对脚本的支持被关闭 时的替代内容，在浏览器支持并开启\<script>脚本时不渲染。一般无需使用该标签，因为现在的浏览器均支持JavaScript。
 
-### 第三、四章-语言基础、变量、作用域与内存
-
+#### 第三章-语言基础
 #### 区分大小写
 
  ECMAScript中一切（变量、函数名、操作符）都区分大小写。
@@ -418,9 +417,7 @@ for(let i=1; i<10; i++) {
 ``````
 
 #### [函数](2022-1--JavaScript高级程序设计-10-函数闭包this.md)
-
 > 点击跳转至第10章
-
 函数对任何语言来说都是核心组件，因为它们可以封装语句，然后在任何地方与时间执行。ECMAScript函数使用function关键字声明，后跟一组参数，然后是函数体。
 
 ``````js
