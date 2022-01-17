@@ -34,10 +34,10 @@ JavaScript 是 ECMAScript 规范的一种实现，它和ECMAScript 基本算同�
 
 * **BOM（浏览器对象模型）**：提供与浏览器交互的方法与接口（拓展）
 
-### **第二章-HTML中的JavaScript**
+### 第二章-HTML中的JavaScript
 
-#### \<script>元素 [MDN\<script>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)
-
+#### \<script>元素    
+ [MDN\<script>](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)    
 JavaScript是通过\<script>元素插入到HTML页面中的，这个元素可用于嵌入JavaScript代码，也可用于引入保存外部文件中的JavaScript。
 
 在引用多个\<script>时，如果没有使用defer和async属性，浏览器会按照\<script>在页面中出现的顺序依次解释它们。
